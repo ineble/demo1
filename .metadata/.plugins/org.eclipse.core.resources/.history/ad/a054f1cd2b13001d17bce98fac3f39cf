@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function add(){
+		alert("할 일을 추가하시겠습니까?")
+		document.getElementById("rTodo").inerHTML = document.
+	}
+</script>
+</head>
+<body>
+	<h1>My Todo App</h1>
+	<hr>
+	<div id="todoForm">
+	<input type="text" placeholder="할일을 입력하세요." size="40" name="todo">
+	<button type="button" onclick="add()">할일 추가</button>
+	</div>
+	<hr>
+	<div id="resultForm">
+	<span id="rTodo"></span>
+	</div>
+	
+</body>
+</html>

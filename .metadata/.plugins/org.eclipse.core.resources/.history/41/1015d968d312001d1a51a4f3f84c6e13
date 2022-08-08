@@ -1,0 +1,17 @@
+<%@page import="java.time.LocalDateTime"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>hello world</h2>
+	<hr>
+	현재 날짜와 시간은
+	<%= LocalDateTime.now() %>
+	입니다.
+</body>
+</html>

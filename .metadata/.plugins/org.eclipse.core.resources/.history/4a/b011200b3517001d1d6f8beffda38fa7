@@ -1,0 +1,10 @@
+package sec03.brd01;
+
+public class BoardService {
+	BoardDAO boardDAO;
+	
+	public BoardService() {
+		boardDAO = new BoardDAO();
+		
+	}
+}

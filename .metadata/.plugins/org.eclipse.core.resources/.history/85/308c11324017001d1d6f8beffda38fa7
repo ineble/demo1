@@ -1,0 +1,54 @@
+package sec03.brd01;
+
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
+public class BoardDAO {
+	private DataSource dataFactory;
+	Connection con;
+	PreparedStatement pstmt;
+
+	public BoardDAO() {
+		try {
+			Context ctx = new InitialContext();
+			Context envContext = (Context) ctx.lookup("java:/comp/env");
+			dataFactory = (DataSource) envContext.lookup("jdbc/servletex");
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public List selectAllArticles() {
+		List articlesList = new ArrayList();
+		try {
+			con = dataFactory.getConnection();
+			String query = "select articleno, parentno, title, content, id, writedate from t_board order by articleNO desc";
+			System.out.println(query);
+			pstmt = con.prepareStatement(query);
+			ResultSet rs = pstmt.executeQuery();
+			while (rs.next()) {
+				int articleNO = rs.getInt("articleno");
+				int parnetNO = rs.getInt("parentno");
+				String title = rs.getString("title");
+				String content = rs.getString("content");
+				String id = rs.getString("id");
+				Date writeDate = rs.getDate("writedate");
+				ArticleVO article = new ArticleVO(articleNO, parnetNO, title, content, imageFileName, id, writeDate);
+				articlesList.add(article);
+			}
+			rs.close();
+			pstmt.close();
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return articlesList;
+	}
+}

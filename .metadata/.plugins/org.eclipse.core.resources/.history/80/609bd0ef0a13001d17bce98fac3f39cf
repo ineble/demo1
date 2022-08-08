@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<% 
+	request.setCharacterEncoding("utf-8");
+	String user_Id = request.getParameter("user_Id");
+	String user_pw = request.getParameter("user_pw");
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+	if(user_id == null || user_id.length() == 0){
+%>
+	아이디를 입력하세요. <br>
+	<a href="/test/login.html"></a>
+
+<%
+	}else
+%>
+	<h1>환영합니다 <%=user_id %> 님!!</h1>
+</body>
+</html>

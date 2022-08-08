@@ -1,0 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>My Todo App</h1>
+	<hr>
+	<div>
+	<input type="text" placeholder="할일을 입력하세요." size="40" name="todo">
+	<buttn type="button" >할일 추가</button>
+	</div>
+</body>
+</html>

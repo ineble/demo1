@@ -1,0 +1,11 @@
+package sec03.brd01;
+
+public class ArticleVO {
+	private int articleNO;
+	private int parentNO;
+	private String title;
+	private String content;
+	private String imageFIleName;
+	private String id;
+	private Date writeDate;
+}

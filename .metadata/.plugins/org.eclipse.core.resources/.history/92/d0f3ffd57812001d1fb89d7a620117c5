@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+<style type="text/css">
+	h2 {
+	text-align: center;
+	width : 100%;
+	padding : 10px 0px;
+	border-radius : 5px;
+	background-color:  wheat;
+	margin : auto;
+	}
+	#regform{
+		text-align: center;
+		background-color: lightblue;
+		width : 50%;
+		border-radius : 15px;
+		margin : auto;
+		padding : 10px 0px;
+	}
+</style>
+</head>
+<body>
+	<h2>회원 가입</h2>
+	<hr>
+	<div id="regform">
+	<label>이름</label> <br>
+	<input type="text" name="name"> <br>
+	<label>이메일</label> <br>
+	<input type="email" name="email"> <br>
+	<input type="button" value="가입" onclick=join()>
+	</div>
+</body>
+</html>
